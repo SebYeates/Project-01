@@ -111,9 +111,15 @@ margin-right: auto;
   border:  5px solid #336BFF;
 }
 
+/* Highlight acording to Result */
+
 .xwin {
   background-color: #009933;
 }
 .owin {
   background-color: #ff0000;
+}
+
+.draw{
+    background-color: #dfdfdf;
 }
