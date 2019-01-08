@@ -1,17 +1,22 @@
+/* Global settings */
 * {
   box-sizing: border-box;
-  font-size: 65px
+  font-size: 65px;
 }
+/* alignment Settings for the body */
 body{
   display: flex;
   justify-content: center;
   flex-direction: column;
-
 }
+
+/* Game Heading */
 h1{
   text-align: center;
   font-size: 50px
+  /* color red; */
 }
+/* The Game boards  */
 
 .game {
   display: flex;
@@ -38,11 +43,24 @@ h1{
 
   border: 1px solid black;
 }
+
+/* Current game and O and X win visualisers  */
+
 .current{
   border: 5px solid green;
 }
+.owin{
+  border: 5px solid blue;
+}
+.xwin{
+  border: 5px solid red;
+}
 
-/* New Game/Restart button */
+/* CSS Animations */
+
+
+
+/* New Game/Restart button, taken from button generator */
 
 #Replay {
   width: 250px;

@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //--- Using the event target this Changes in the HTML of Child to X|| O---
     e.target.innerHTML = player
     //--- Adds the class Taken so the cell cant be changed ---
-    e.target.classList.add('taken')
+    e.target.classList.add('taken', 'animated', 'flip')
 
     // Check for Win
     checkWin(e)
@@ -32,14 +32,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- This removes the old 'current' class and appies it to the new bord classas 'current'---
     // This removes the current class from the previous clicked on square
     //applies it to the new clicked square unless it has the class of taken.
+    
+    const childArray = Array.from(boards[index].children)
+    const hasClass = e => e.classList.contains('taken')
+
     boardThatWasClickedOn.classList.remove('current')
 
     if(boards[index].classList.contains('taken')) {
       return boardThatWasClickedOn.classList.add('current')
     } else {
-      return boards[index].classList.add('current')
+      if (childArray.every(hasClass)) {
+        return boardThatWasClickedOn.classList.add('current')
+      } else {
+        return boards[index].classList.add('current')
+      }
     }
   }
+
 
   boards.forEach(board => {
     // Array.from turns the children of the board into a normal array
@@ -74,9 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // decides if all the moves match the player eg: ['X', 'X', 'X'] === true
       const isAWinningLine = rowOfMoves.every(move => move === player)
-
+      console.log(isAWinningLine)
       if (isAWinningLine === true )
-        e.target.parentNode.classList.add('taken')
+        e.target.parentNode.classList.add('taken', 'animated', 'flip')
+      if (player === 'X' && isAWinningLine === true){
+        return e.target.parentNode.classList.add('xwin')
+      }
+      if (player === 'O' && isAWinningLine === true){
+        return e.target.parentNode.classList.add('owin')
+      }
       return isAWinningLine
 
     })
