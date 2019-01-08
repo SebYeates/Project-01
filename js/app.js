@@ -1,109 +1,94 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const h1 =document.querySelector('h1')
-  h1.textContent='Hello World'
 
-  // ----- Variables ------
-  const smallTiles = document.querySelectorAll('.smalltile')
-  const smallboards = document.querySelectorAll('.smallboard')
-  let playerOne = 1
+  // --- Variables ---
+  let player = 'X'
+  const refresh = document.querySelector('button')
+  const gameBoard = document.querySelector('.game')
+  const boards = gameBoard.querySelectorAll('.small-board')
 
-  // -----List of functions-----
+  //--- If click in a div that dose not have class 'current' inner html does not change ---
 
-  // New game button restarts game.
 
+
+  function handleClick(e) {
+    const boardThatWasClickedOn = e.target.parentNode
+    if(!boardThatWasClickedOn.classList.contains('current')) return false
+    if(boardThatWasClickedOn.classList.contains('taken')) return false
+    if(e.target.classList.contains('taken')) return false
+    //--- Array of tiles is built from the parentNode ---
+    const tiles = Array.from(e.target.parentNode.children)
+    const index = tiles.indexOf(e.target)
+
+    //--- Using the event target this Changes in the HTML of Child to X|| O---
+    e.target.innerHTML = player
+    //--- Adds the class Taken so the cell cant be changed ---
+    e.target.classList.add('taken')
+
+    // Check for Win
+    checkWin(e)
+
+    // --- Switch between players ---
+    player = player === 'O' ? 'X' : 'O'
+    // --- This removes the old 'current' class and appies it to the new bord classas 'current'---
+    // This removes the current class from the previous clicked on square
+    //applies it to the new clicked square unless it has the class of taken.
+    boardThatWasClickedOn.classList.remove('current')
+
+    if(boards[index].classList.contains('taken')) {
+      return boardThatWasClickedOn.classList.add('current')
+    } else {
+      return boards[index].classList.add('current')
+    }
+  }
+
+  boards.forEach(board => {
+    // Array.from turns the children of the board into a normal array
+    Array.from(board.children).forEach(tile => {
+      tile.addEventListener('click', handleClick)
+    })
+  })
+
+  // //---Check win ---
+  const lines = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [2,5,8],
+    [0,3,6],
+    [1,4,7],
+    [6,4,2],
+    [0,4,8]
+  ]
+
+  function checkWin(e){
+
+    const cells = Array.from(e.target.parentNode.children)
+    // checks each line
+    // if some of them, (ie 1 or more lines) are winning lines returns true
+    // otherwise returns false
+
+    return lines.some(line => {
+
+      // gets the moves of that line eg: ['X', '', 'X'], ['O', 'X', '']
+      const rowOfMoves = line.map(index => cells[index].innerHTML)
+
+      // decides if all the moves match the player eg: ['X', 'X', 'X'] === true
+      const isAWinningLine = rowOfMoves.every(move => move === player)
+
+      if (isAWinningLine === true )
+        e.target.parentNode.classList.add('taken')
+      return isAWinningLine
+
+    })
+
+  }
+
+
+  //---Restart Game---
   function refreshPage() {
     window.location.reload()
   }
+  refresh.addEventListener('click', refreshPage)
 
-  // Change turns // Player 1 uses X (Green) then Player 2/AI uses O (Red) (changes between after each turn)
-  smallTiles.forEach(tile => tile.addEventListener('click', playerturn))
-
-  function playerturn (e){
-    // console.log(e)
-    whichBoard(e)
-    if (playerOne === 1) {
-      e.target.textContent = 'X'
-      e.target.classList.add('xwin')
-      playerOne = 0
-    } else {
-      e.target.textContent = 'O'
-      e.target.classList.add('owin')
-      playerOne = 1
-    }
-  }
-
-  // ---- Highlight BORD for currentgame ----
-
-  var lastClickedBoard = smallboards[0]
-  var newClickedBoard
-
-  function whichBoard (e) {
-    lastClickedBoard.classList.remove('currentgame')
-
-    switch(true){
-      case (e.target.classList.contains('A')):
-        console.log('Board 1')
-        newClickedBoard = smallboards[0]
-        newClickedBoard.classList.add('currentgame')
-        lastClickedBoard = newClickedBoard
-        return
-      case (e.target.classList.contains('B')):
-        console.log('Board 2')
-        newClickedBoard = smallboards[1]
-        newClickedBoard.classList.add('currentgame')
-        lastClickedBoard = newClickedBoard
-        return
-      case (e.target.classList.contains('C')):
-        console.log('Board 1')
-        newClickedBoard = smallboards[2]
-        newClickedBoard.classList.add('currentgame')
-        lastClickedBoard = newClickedBoard
-        return
-      case (e.target.classList.contains('D')):
-        console.log('Board 2')
-        newClickedBoard = smallboards[3]
-        newClickedBoard.classList.add('currentgame')
-        lastClickedBoard = newClickedBoard
-        return
-      case (e.target.classList.contains('E')):
-        console.log('Board 1')
-        newClickedBoard = smallboards[4]
-        newClickedBoard.classList.add('currentgame')
-        lastClickedBoard = newClickedBoard
-        return
-      case (e.target.classList.contains('F')):
-        console.log('Board 2')
-        newClickedBoard = smallboards[5]
-        newClickedBoard.classList.add('currentgame')
-        lastClickedBoard = newClickedBoard
-        return
-      case (e.target.classList.contains('G')):
-        console.log('Board 1')
-        newClickedBoard = smallboards[6]
-        newClickedBoard.classList.add('currentgame')
-        lastClickedBoard = newClickedBoard
-        return
-      case (e.target.classList.contains('H')):
-        console.log('Board 2')
-        newClickedBoard = smallboards[7]
-        newClickedBoard.classList.add('currentgame')
-        lastClickedBoard = newClickedBoard
-        return
-      case (e.target.classList.contains('I')):
-        console.log('Board 1')
-        newClickedBoard = smallboards[8]
-        newClickedBoard.classList.add('currentgame')
-        lastClickedBoard = newClickedBoard
-        return
-
-    }
-
-
-  }
-  // Checkwin // After every turn check win funtion looks for win. Then changes background of smallboard for either player 1/2/AI (ABC, DEF, GHI, ADG, BEH, CFI, AEI, CEG)
-
-  // change background
-
-  // Display Results  // GAME OVER display tie/win/lose (change DIV text in .endgame)
 
 })

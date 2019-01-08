@@ -1,125 +1,95 @@
-h1{color:#blue}
-/*# sourceMappingURL=style.css.map */
-
-body
-{
+* {
+  box-sizing: border-box;
+  font-size: 65px
+}
+body{
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  align-items: center;
-  background-image: url("../images/1447007.jpg");
+
 }
-
-/* GAME BORD */
-
-.largeboard-wrapper{
-}
-
-.largeboard {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto;
-  width: 100%;
-  height: 100%;
-  grid-gap: 10px; /* small game grid lines */
-}
-
-
-.largetile{
-  border:  1px solid #333;
-  border-radius: 5px;
-}
-
-.smallboard {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 100px 100px 100px;
-  background-color: #333;
-  color: #444;
-}
-
-.smalltile {
-  background-color: #d9d9d9;
-  color: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 150%;
-}
-
-/* GAME OPtions and results */
-
-
-.options {
-  margin: 10px;
+h1{
   text-align: center;
-  border-style: solid;
-  border-width: 2px;
+  font-size: 50px
+}
+
+.game {
+  display: flex;
+  width: 608px;
+  height: 608px;
+  margin: auto;
+  flex-wrap: wrap;
+
+  border: 1px solid red;
+}
+
+.small-board {
+  display: flex;
+  width: 202px;
+  height: 202px;
+  flex-wrap: wrap;
+
+  border: 1px solid green;
+}
+
+.small-board div {
+  width: calc(100% / 3);
+  height: calc(100% / 3);
+
+  border: 1px solid black;
+}
+.current{
+  border: 5px solid green;
 }
 
 /* New Game/Restart button */
 
 #Replay {
-width: 250px;
-height: 50px;
-max-width: 400px;
-margin-left: auto;
-margin-right: auto;
+  width: 250px;
+  height: 50px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+
 }
 #Replay {
-	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf));
-	background:-moz-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
-	background:-webkit-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
-	background:-o-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
-	background:-ms-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
-	background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf',GradientType=0);
-	background-color:#ededed;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	cursor:pointer;
-	color:#333;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
+  -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf));
+  background:-moz-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+  background:-webkit-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+  background:-o-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+  background:-ms-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+  background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf',GradientType=0);
+  background-color:#ededed;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #dcdcdc;
+  display:inline-block;
+  cursor:pointer;
+  color:#333;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #ffffff;
 }
 #Replay:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed));
-	background:-moz-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
-	background:-webkit-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
-	background:-o-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
-	background:-ms-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
-	background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed',GradientType=0);
-	background-color:#dfdfdf;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed));
+  background:-moz-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+  background:-webkit-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+  background:-o-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+  background:-ms-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+  background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed',GradientType=0);
+  background-color:#dfdfdf;
 }
 #Replay:active {
-	position:relative;
-	top:1px;
-}
-
-/* Highlight game to play*/
-
-.currentgame{
-  border:  5px solid #336BFF;
-}
-
-/* Highlight acording to Result */
-
-.xwin {
-  background-color: #009933;
-}
-.owin {
-  background-color: #ff0000;
-}
-
-.draw{
-    background-color: #dfdfdf;
+  position:relative;
+  top:1px;
 }
