@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const results = document.querySelector('.results')
   const hal = document.querySelector('.hal')
 
+  let hasHal = false;
 
 
   //--- If click in a div that dose not have class 'current' inner html does not change ---
@@ -114,14 +115,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
 
-  //--- AI player ---
-  const childArray = Array.from(boards[index].children)
-
-  if (player = 'O' && hal.value = 'true' )
-  function pickRandomTileInCurrent() {
-     Math.floor(Math.random( * childArray.length))
-  }
-
+  //--- AI player --- If radio buttion at start of game is set to 'true'. hal plays as player O.
+  // const childArray = Array.from(boards[index].children)
+  //
+  // if (player === 'O' && hal.value = 'true' )
+  // function pickRandomTileInCurrent() {
+  //    Math.floor(Math.random( * childArray.length))
+  // }
+  //
 
   //---Restart Game---
 
