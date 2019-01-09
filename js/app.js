@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const tiles = Array.from(e.target.parentNode.children)
     const index = tiles.indexOf(e.target)
 
+
+
     //--- Using the event target this Changes in the HTML of Child to X|| O---
     e.target.innerHTML = player
     //--- Adds the class Taken so the cell cant be changed ---
@@ -32,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- This removes the old 'current' class and appies it to the new bord classas 'current'---
     // This removes the current class from the previous clicked on square
     //applies it to the new clicked square unless it has the class of taken.
-    
+
     const childArray = Array.from(boards[index].children)
     const hasClass = e => e.classList.contains('taken')
 
