@@ -5,20 +5,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const refresh = document.querySelector('button')
   const gameBoard = document.querySelector('.game')
   const boards = gameBoard.querySelectorAll('.small-board')
+  const results = document.querySelector('results')
 
   //--- If click in a div that dose not have class 'current' inner html does not change ---
 
+  boards.forEach(board => {
+    // Array.from turns the children of the board into a normal array
+    Array.from(board.children).forEach(tile => {
+      tile.addEventListener('click', handleClick)
+    })
+  })
 
 
   function handleClick(e) {
     const boardThatWasClickedOn = e.target.parentNode
-    if(!boardThatWasClickedOn.classList.contains('current')) return false
+    if(!boardThatWasClickedOn.classList.contains('firstclick'))
+      if(!boardThatWasClickedOn.classList.contains('current')) return false
     if(boardThatWasClickedOn.classList.contains('taken')) return false
     if(e.target.classList.contains('taken')) return false
     //--- Array of tiles is built from the parentNode ---
     const tiles = Array.from(e.target.parentNode.children)
     const index = tiles.indexOf(e.target)
-
 
 
     //--- Using the event target this Changes in the HTML of Child to X|| O---
@@ -40,24 +47,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     boardThatWasClickedOn.classList.remove('current')
 
-    if(boards[index].classList.contains('taken')) {
+    if (boards[index].classList.contains('taken')){
+      boardThatWasClickedOn.classList.add('current')
+    }
+
+    if (boards[0].classList.contains('firstclick')){
+      console.log('contains first click')
+      boards.forEach(board => board.classList.remove('firstclick'))
+    }
+
+    if (childArray.every(hasClass)) {
       return boardThatWasClickedOn.classList.add('current')
     } else {
-      if (childArray.every(hasClass)) {
-        return boardThatWasClickedOn.classList.add('current')
-      } else {
-        return boards[index].classList.add('current')
-      }
+      return boards[index].classList.add('current')
     }
+
+
   }
 
-
-  boards.forEach(board => {
-    // Array.from turns the children of the board into a normal array
-    Array.from(board.children).forEach(tile => {
-      tile.addEventListener('click', handleClick)
-    })
-  })
 
   // //---Check win ---
   const lines = [
@@ -90,9 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
         e.target.parentNode.classList.add('taken', 'animated', 'flip')
       if (player === 'X' && isAWinningLine === true){
         return e.target.parentNode.classList.add('xwin')
+        results.e.target.innerHTML = 'X has won this tile'
       }
       if (player === 'O' && isAWinningLine === true){
         return e.target.parentNode.classList.add('owin')
+        results.e.target.innerHTML = 'O has won this tile'
       }
       return isAWinningLine
 
