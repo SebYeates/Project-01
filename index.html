@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <script src="js/app.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <title>Project 1</title>
-  </head>
-  <body>
-    <h1 class="heading animated jackInTheBox">ULTIMATE TIC TAC TOE</h1>
-    <div class="game">
-      <div class="animated rotateIn small-board firstclick">
+<head>
+  <meta charset="utf-8">
+  <script src="js/app.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <title>Project 1</title>
+</head>
+<body>
+  <h1 class="heading animated jackInTheBox">ULTIMATE TIC TAC TOE</h1>
+  <div class="wrapper">
+    <div class=" left game">
+      <div class="animated rotateIn small-board current">
         <div class=""></div>
         <div class=""></div>
         <div class=""></div>
@@ -21,7 +22,7 @@
         <div class=""></div>
         <div class=""></div>
       </div>
-      <div class="animated rotateIn small-board firstclick">
+      <div class="animated rotateIn small-board current">
         <div class=""></div>
         <div class=""></div>
         <div class=""></div>
@@ -32,7 +33,7 @@
         <div class=""></div>
         <div class=""></div>
       </div>
-      <div class="animated rotateIn small-board firstclick">
+      <div class="animated rotateIn small-board current">
         <div class=""></div>
         <div class=""></div>
         <div class=""></div>
@@ -43,7 +44,7 @@
         <div class=""></div>
         <div class=""></div>
       </div>
-      <div class="animated rotateIn small-board firstclick">
+      <div class="animated rotateIn small-board current">
         <div class=""></div>
         <div class=""></div>
         <div class=""></div>
@@ -54,7 +55,7 @@
         <div class=""></div>
         <div class=""></div>
       </div>
-      <div class="animated rotateIn small-board firstclick">
+      <div class="animated rotateIn small-board current">
         <div class=""></div>
         <div class=""></div>
         <div class=""></div>
@@ -65,7 +66,7 @@
         <div class=""></div>
         <div class=""></div>
       </div>
-      <div class="animated rotateIn small-board firstclick">
+      <div class="animated rotateIn small-board current">
         <div class=""></div>
         <div class=""></div>
         <div class=""></div>
@@ -76,7 +77,7 @@
         <div class=""></div>
         <div class=""></div>
       </div>
-      <div class="animated rotateIn small-board firstclick">
+      <div class="animated rotateIn small-board current">
         <div class=""></div>
         <div class=""></div>
         <div class=""></div>
@@ -87,7 +88,7 @@
         <div class=""></div>
         <div class=""></div>
       </div>
-      <div class="animated rotateIn small-board firstclick">
+      <div class="animated rotateIn small-board current">
         <div class=""></div>
         <div class=""></div>
         <div class=""></div>
@@ -98,7 +99,7 @@
         <div class=""></div>
         <div class=""></div>
       </div>
-      <div class="animated rotateIn small-board firstclick">
+      <div class="animated rotateIn small-board current">
         <div class=""></div>
         <div class=""></div>
         <div class=""></div>
@@ -111,24 +112,31 @@
       </div>
     </div>
 
-    <!-- GAME OPTIONS -->
-    <div class=" animated slideInUp gameOptions">
-    <!-- button for New Game  -->
-    <div class="message"></div>
-    <button class="Replay press">New GAME</button>
+    <div class="animated zoomInRight gameOptions">
+      <div class="Rules">
+        <h2 class="Rules">Rules</h2>
+        <p class="Rules"> Win three games of Tic Tac Toe in a row.<br>
+          You may only play in the green box.<br> First move can go anywhere! Good Luck.</p>
+        </div>
 
-    <!-- Results board -->
-    <div class="results">Game Ready</div>
+        <!-- Results board -->
+        <div class="results">Game Ready</div>
 
-    <!-- 2 players or AI -->
+        <!-- GAME OPTIONS -->
+        <div class=" animated slideInUp gameOptions"></div>
 
-    <form class="condtions">
-      <div class="condtions"><input type="radio" name="1" value="pvp" checked> Player vs Player</div>
-      <div class="condtions"><input class="hal" type="radio" name="1" value="true"> Player vs HAL</div>
-    </form>
-  </div>
+        <!-- button for New Game  -->
+        <div class="message"></div>
+        <button class="Replay press">New GAME</button>
 
+        <!-- 2 players or AI -->
+        <form class="condtions">
+          <div class="condtions"><input type="radio" name="1" value="pvp" checked> Player vs Player</div>
+          <!-- <div class="condtions"><input class="hal" type="radio" name="1" value="true"> Player vs HAL</div> -->
+        </form>
 
+      </div>
+    </div>
   </body>
 
-</html>
+  </html>

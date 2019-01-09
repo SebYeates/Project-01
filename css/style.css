@@ -1,13 +1,19 @@
 /* Global settings */
 * {
   box-sizing: border-box;
-  font-size: 65px;
+  font-size: 40px;
+  text-align: center;
 }
 /* alignment Settings for the body */
 body{
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.wrapper{
+  display: flex;
+  justify-content: center;
 }
 
 /* Game Heading */
@@ -60,14 +66,22 @@ body{
 /* CSS Animations */
 
 /* GAME OPTIONS */
-.gameOptions{
-padding: 20;
- display: flex;
- margin: auto;
- /* border: 1px solid green; */
- height: 100px;
+
+.Rules{
+  font-size: 20px
+  text-align: center;
 }
 
+.gameOptions{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: stretch;
+  margin: auto;
+  text-align: center;
+}
 
 
 .condtions{
