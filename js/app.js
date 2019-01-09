@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const gameBoard = document.querySelector('.game')
   const boards = Array.from(gameBoard.querySelectorAll('.small-board'))
   const results = document.querySelector('.results')
+  const gameresults = document.querySelector('.gameresults')
   const lines = [
     [0,1,2],
     [3,4,5],
@@ -21,9 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     '','','',
     '','',''
   ]
-  // const hal = document.querySelector('.hal')
-
-  //--- If click in a div that dose not have class 'current' inner html does not change ---
 
   boards.forEach(board => {
     // Array.from turns the children of the board into a normal array
@@ -55,7 +53,38 @@ document.addEventListener('DOMContentLoaded', () => {
       mainGrid[boardIndex] = player
       boardThatWasClickedOn.classList.add('taken')
       console.log(checkWin(mainGrid))
+
+      if (player === 'X' && mainGrid === true){
+        gameresults.innerHTML = 'X wins'
+      }else{
+        (player === 'O' && mainGrid === true)
+        gameresults.innerHTML = 'O wins'
+      }
     }
+
+    function checkWin(grid){
+
+      const linesToCheck = lines.map(line => line.map(index => grid[index]))
+      // checks each line
+      // if some of them, (ie 1 or more lines) are winning lines returns true
+      // otherwise returns false
+      return linesToCheck.some(line => {
+        // gets the moves of that line eg: ['X', '', 'X'], ['O', 'X', '']
+        // decides if all the moves match the player eg: ['X', 'X', 'X'] === true
+        const isAWinningLine = line.every(move => move === player)
+
+        if (player === 'X' && isAWinningLine === true){
+          return e.target.parentNode.classList.add('xwin', 'animated', 'flip')
+        }
+        if (player === 'O' && isAWinningLine === true){
+          return e.target.parentNode.classList.add('owin', 'animated', 'flip')
+        }
+
+        return isAWinningLine
+      })
+    }
+
+
 
     // --- Switch between players ---
     player = player === 'O' ? 'X' : 'O'
@@ -65,8 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // This removes the current class from the previous clicked on square
     //applies it to the new clicked square unless it has the class of taken.
 
-    // const hasClass = e => e.classList.contains('taken')
-    // const childArray = Array.from(boards[index].children)
     if(tiles.every(tile => tile.classList.contains('taken'))) {
       boardThatWasClickedOn.classList.add('taken')
     }
@@ -81,23 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       boards[index].classList.add('current')
     }
-
-
-  }
-
-
-  function checkWin(grid){
-
-    const linesToCheck = lines.map(line => line.map(index => grid[index]))
-    // checks each line
-    // if some of them, (ie 1 or more lines) are winning lines returns true
-    // otherwise returns false
-    return linesToCheck.some(line => {
-      // gets the moves of that line eg: ['X', '', 'X'], ['O', 'X', '']
-      // decides if all the moves match the player eg: ['X', 'X', 'X'] === true
-      const isAWinningLine = line.every(move => move === player)
-      return isAWinningLine
-    })
   }
 
 
