@@ -8,7 +8,7 @@
     <title>Project 1</title>
   </head>
   <body>
-    <h1 class="animated jackInTheBox">ULTIMATE TIC TAC TOE</h1>
+    <h1 class="heading animated jackInTheBox">ULTIMATE TIC TAC TOE</h1>
     <div class="game">
       <div class="animated rotateIn small-board firstclick">
         <div class=""></div>
@@ -110,12 +110,24 @@
         <div class=""></div>
       </div>
     </div>
+
+    <!-- GAME OPTIONS -->
+    <div class=" animated slideInUp gameOptions">
     <!-- button for New Game  -->
     <div class="message"></div>
-    <button id="Replay">New GAME</button>
+    <button class="Replay press">New GAME</button>
 
     <!-- Results board -->
-    <div class="results"></div>
+    <div class="results">Game Ready</div>
+
+    <!-- 2 players or AI -->
+
+    <form class="condtions">
+      <div class="condtions"><input type="radio" name="1" value="pvp" checked> Player vs Player</div>
+      <div class="condtions"><input class="hal" type="radio" name="1" value="true"> Player vs HAL</div>
+    </form>
+  </div>
+
 
   </body>
 

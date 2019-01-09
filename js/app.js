@@ -5,7 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const refresh = document.querySelector('button')
   const gameBoard = document.querySelector('.game')
   const boards = gameBoard.querySelectorAll('.small-board')
-  const results = document.querySelector('results')
+  const results = document.querySelector('.results')
+  const hal = document.querySelector('.hal')
+
+
 
   //--- If click in a div that dose not have class 'current' inner html does not change ---
 
@@ -38,12 +41,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Switch between players ---
     player = player === 'O' ? 'X' : 'O'
+    // results turn
+    player === 'O' ? results.innerHTML = 'O Turn' : results.innerHTML = 'X Turn'
     // --- This removes the old 'current' class and appies it to the new bord classas 'current'---
     // This removes the current class from the previous clicked on square
     //applies it to the new clicked square unless it has the class of taken.
 
-    const childArray = Array.from(boards[index].children)
     const hasClass = e => e.classList.contains('taken')
+    const childArray = Array.from(boards[index].children)
 
     boardThatWasClickedOn.classList.remove('current')
 
@@ -55,6 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('contains first click')
       boards.forEach(board => board.classList.remove('firstclick'))
     }
+
+    // if (board => board.classList.contains('owin' 'xwin'))
 
     if (childArray.every(hasClass)) {
       return boardThatWasClickedOn.classList.add('current')
@@ -96,12 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isAWinningLine === true )
         e.target.parentNode.classList.add('taken', 'animated', 'flip')
       if (player === 'X' && isAWinningLine === true){
-        return e.target.parentNode.classList.add('xwin')
-        results.e.target.innerHTML = 'X has won this tile'
+        e.target.parentNode.classList.add('xwin')
       }
       if (player === 'O' && isAWinningLine === true){
-        return e.target.parentNode.classList.add('owin')
-        results.e.target.innerHTML = 'O has won this tile'
+        e.target.parentNode.classList.add('owin')
       }
       return isAWinningLine
 
@@ -109,8 +114,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
 
+  //--- AI player ---
+  const childArray = Array.from(boards[index].children)
+
+  if (player = 'O' && hal.value = 'true' )
+  function pickRandomTileInCurrent() {
+     Math.floor(Math.random( * childArray.length))
+  }
+
 
   //---Restart Game---
+
   function refreshPage() {
     window.location.reload()
   }
