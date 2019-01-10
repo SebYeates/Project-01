@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Switch between players ---
     player = player === 'O' ? 'X' : 'O'
     // results turn
-    results.innerHTML = (player === 'O') ? 'O Turn' : 'X Turn'
+    results.innerHTML = (player === 'O') ? 'O\'s Turn' : 'X\'s Turn'
     // --- This removes the old 'current' class and appies it to the new bord classas 'current'---
     // This removes the current class from the previous clicked on square
     //applies it to the new clicked square unless it has the class of taken.
