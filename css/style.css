@@ -56,10 +56,10 @@ body{
 .current{
   border: 5px solid green;
 }
-.owin{
+.taken.O{
   border: 5px solid blue;
 }
-.xwin{
+.taken.X{
   border: 5px solid red;
 }
 
