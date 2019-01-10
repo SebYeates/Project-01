@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (checkWin(mainGrid)){
       gameresults.innerHTML = (player === 'X') ? 'X wins' : 'O wins'
       boards.forEach(board => board.classList.add('taken'))
+      // results.classList.remove('results')
     }
     // --- Switch between players ---
     player = player === 'O' ? 'X' : 'O'

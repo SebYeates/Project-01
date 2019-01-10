@@ -77,6 +77,15 @@ body{
   text-align: center;
 }
 
+h2.Rules{
+  font-size: 40px;
+}
+
+h4{
+  font-size: 30px;
+  margin: 5px;
+}
+
 .gameOptions{
 	display: flex;
 	flex-direction: column;
@@ -98,9 +107,10 @@ body{
 
 }
 
-.results{
+/* div.results{
   margin: 10px
-}
+  border: 1px solid green;
+} */
 
 /* New Game/Restart button, taken from button generator */
 
