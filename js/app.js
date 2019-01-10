@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // MAIN GAME RESULTS
     if (checkWin(mainGrid)){
       gameresults.innerHTML = (player === 'X') ? 'X wins' : 'O wins'
+      boards.forEach(board => board.classList.add('taken'))
     }
-
     // --- Switch between players ---
     player = player === 'O' ? 'X' : 'O'
     // results turn
