@@ -44,7 +44,7 @@ Ultimate Tic Tac Toe is a two player game inspired by the the clasic game Tic Ta
 ![screenshot - Small Board Win](https://user-images.githubusercontent.com/44299893/51029873-8b1dbf80-158f-11e9-9759-0c36fb6566ad.png)
 
 
-4. If the player selects a small board that has already been taken the next player can place their turn anywhere. within a green box like the first move of the game.
+4. If the player selects a small board that has already been taken the next player can place their turn anywhere, within a green box like the first move of the game.
 
 ![screenshot - Place anywhere ](https://user-images.githubusercontent.com/44299893/51029924-b30d2300-158f-11e9-9e03-dff1cff8a81e.png)
 
