@@ -34,17 +34,17 @@ Ultimate Tic Tac Toe is a two player game inspired by the the clasic game Tic Ta
 
 ![screenshot - Start Board](https://user-images.githubusercontent.com/44299893/51029692-f4510300-158e-11e9-85db-358a0d1a1bed.png)
 
-2. Once the game begins. The Small gameboard gets a green border where the next move "O" can be placed. Depending on Who's go it is the Rules box updates.
+2. Once the game begins. The Small game board gets a green border where the next move "O" can be placed. Depending on Who's go it is the Rules box updates. The placement of "O" will decide which small board "X" will play next.
 
 ![screenshot - Next play ](https://user-images.githubusercontent.com/44299893/51029780-34b08100-158f-11e9-8af3-5f2ef5c65de7.png)
 
 
-3. When a player takes a small gameboard the result turns the border color either blue or red depending on the player.
+3. When a player wins a small gameboard the result turns the border color either blue or red depending on the player and adds the class taken so it can't be played again.
 
 ![screenshot - Small Board Win](https://user-images.githubusercontent.com/44299893/51029873-8b1dbf80-158f-11e9-9759-0c36fb6566ad.png)
 
 
-4. If the player selects a small board that has already been taken the next player can place their turn anywhere, within a green box like the first move of the game.
+4. If the player selects a small board that has already been won the next player can place their turn anywhere, within a green box like the first move of the game.
 
 ![screenshot - Place anywhere ](https://user-images.githubusercontent.com/44299893/51029924-b30d2300-158f-11e9-9e03-dff1cff8a81e.png)
 
