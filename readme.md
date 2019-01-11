@@ -26,7 +26,7 @@ Ultimate Tic Tac Toe is a two player game inspired by the the clasic game Tic Ta
 ### Controls
 - New game: "New Game" button ".
 - Mouse click to place "X" or "O" depending on the player.
-- Player vs Player: 'radio buttion'
+- Player vs Player: 'radio button'
 
 
 ### Game Instructions
@@ -34,7 +34,7 @@ Ultimate Tic Tac Toe is a two player game inspired by the the clasic game Tic Ta
 
 ![screenshot - Start Board](https://user-images.githubusercontent.com/44299893/51029692-f4510300-158e-11e9-85db-358a0d1a1bed.png)
 
-2. Once the game begins, The Small gameboard gets a green border where the next move "O" can be placed. depending on Who's go it is the Rules box updates.
+2. Once the game begins. The Small gameboard gets a green border where the next move "O" can be placed. Depending on Who's go it is the Rules box updates.
 
 ![screenshot - Next play ](https://user-images.githubusercontent.com/44299893/51029780-34b08100-158f-11e9-8af3-5f2ef5c65de7.png)
 
@@ -58,21 +58,21 @@ Ultimate Tic Tac Toe is a two player game inspired by the the clasic game Tic Ta
 
 The starting point for this game was creating the basic grid layout on which the game board would work. This was created by a list of 'div's in the HTML. Each cell within the grid was an individual element. These cells are nestled within a container div called small-board. The small boards were created by applying classes to the elements within the grid.
 
-I used flex to get the small boards to line up to make a Big board. Next I wrote out the possible win conditions (lines) for the big board that could be applied to the small boards, this was done first useing letters  A-I later was updated to reflect the index of a array 0-8.
+I used flex to get the small boards to line up to make a Big board. Next I wrote out the possible win conditions (lines) for the big board that could be applied to the small boards, this was done first using letters  A-I later was updated to reflect the index of a array 0-8.
 
-While the game is running, If a usser clicks a div (tile)  within a small board the innerHTML is updated with the current player varible also the index of the div clicked (0-8) is logged and applied to update the current game on the big board using the same index number (0-8).
+While the game is running, If a user clicks a div (tile)  within a small board the innerHTML is updated with the current player variable also the index of the div clicked (0-8) is logged and applied to update the current game on the big board using the same index number (0-8).
 
-Once I had this mechanics working, I worked on adding a function check win that would take the possible win conditions (lines) and check the small boards for a match useing the players varible for the match.
+Once I had this mechanics working, I worked on adding a function check win that would take the possible win conditions (lines) and check the small boards for a match using the players variable for the match.
 
-I then moved onto checking the main board for a win using the same logic but creating an Array (maingrid) that stored the results of the small boards for the check win function to interigate and find a match.
+I then moved onto checking the main board for a win using the same logic but creating an Array (maingrid) that stored the results of the small boards for the check win function to interrogate and find a match.
 
-As the game continued to develop I created conditions for the users not to click on "taken" tiles. To do this I used the class name "taken" and made it so the current game would not be able to update the small board or tiles that had the class taken. This became useful for overcomeing a draw result on the game.
+As the game continued to develop I created conditions for the users not to click on "taken" tiles. To do this I used the class name "taken" and made it so the current game would not be able to update the small board or tiles that had the class taken. This became useful for overcoming a draw result on the game.
 
-The final significant element was creating a way to end the game. To do this I used the main grid that was a Array holding the small boards results of "X" or "O". The Check win funtion would be called to run over the array using the possible win conditions comparing the index value with the players varible. If this returned true, the game would add the class taken to all small boards preventing further play. The final step was updating the Main game results. This was done when the main grid check win funtion returned true the internal ternary that looked at the players varible and returned either X wins or O wins.  
+The final significant element was creating a way to end the game. To do this I used the main grid that was a Array holding the small boards results of "X" or "O". The Check win function would be called to run over the array using the possible win conditions comparing the index value with the players variable. If this returned true, the game would add the class taken to all small boards preventing further play. The final step was updating the Main game results. This was done when the main grid check win function returned true the internal ternary that looked at the players variable and returned either X wins or O wins.  
 
 ### Challenges
 
-This game involves quite a lot of javascript logic with difrent outcomes that the games result is dependant on . It was a challenge to make sure the gaming mechanics were working correctly. It was also important that the code logic that cope with diffrent results and display the correct outcome.
+This game involves quite a lot of javascript logic with different outcomes that the games result is dependant on . It was a challenge to make sure the gaming mechanics were working correctly. It was also important that the code logic that cope with different results and display the correct outcome.
 
 
 ### Wins
@@ -83,7 +83,7 @@ Adding CSS Animations to the game on results to give a visual representation tha
 
 Taking on a further understanding of Javascript and how it can be used to look for results in the grids. This project has also changed my outlook on how I would plan and create new code.  
 
-I kept to two main princibles of D.R.Y Do not repeat and KISS Keep it stupid Simple.
+I kept to two main principles of D.R.Y Do not repeat and KISS Keep it stupid Simple.
 
 
 ## Future features
@@ -91,7 +91,7 @@ I kept to two main princibles of D.R.Y Do not repeat and KISS Keep it stupid Sim
 If I had more time, I would like to try and make the following;
 
 1, a)  The game playable with one player and a computer element named Hal.
-    b) Different levels could be added to the game with different logic pattens of where the computer plays compared to the users last played possition. Insted of just ussing math.random on a click event to play a move.
+    b) Different levels could be added to the game with different logic pattens of where the computer plays compared to the users last played position. Insted of just ussing math.random on a click event to play a move.
 
 2, I would of liked to make the game responsive so it could be played on a mobile device such as a  mobile phone or ipad.
 
