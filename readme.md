@@ -18,7 +18,7 @@
 ## My Game - Ultimate Tic Tac Toe
 
 
-You can find a hosted version here ----> https://sportyparsley.github.io/Project-01/?fbclid=IwAR0hySPoR0HvS5sd_gPEfkxDCmupcLwPslPsj4QTwH4oWdci_QXdcfKWyGI
+You can find a hosted version here ----> https://SebYeates.github.io/Project-01/?fbclid=IwAR0hySPoR0HvS5sd_gPEfkxDCmupcLwPslPsj4QTwH4oWdci_QXdcfKWyGI
 
 ### Game overview
 Ultimate Tic Tac Toe is a two player game inspired by the the clasic game Tic Tac Toe. The aim is to Win three games in a row. You can only play in the green box that is decided by the last players movement.
