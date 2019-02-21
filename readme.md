@@ -1,4 +1,4 @@
-# General Assembly Project 1 : Simple front-end game
+# General Assembly Project 1 : Simple front-end game - Solo Project
 
 ### Timeframe
 7 days
