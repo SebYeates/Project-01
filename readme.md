@@ -1,5 +1,9 @@
 # General Assembly Project 1 : Simple front-end game - Solo Project
 
+## My Game - Ultimate Tic Tac Toe
+
+You can find a hosted version here ----> https://SebYeates.github.io/Project-01/?fbclid=IwAR0hySPoR0HvS5sd_gPEfkxDCmupcLwPslPsj4QTwH4oWdci_QXdcfKWyGI
+
 ### Timeframe
 7 days
 
@@ -15,10 +19,6 @@
 1. Clone or download the repo
 2. Open the `index.html` in your browser of choice
 
-## My Game - Ultimate Tic Tac Toe
-
-
-You can find a hosted version here ----> https://SebYeates.github.io/Project-01/?fbclid=IwAR0hySPoR0HvS5sd_gPEfkxDCmupcLwPslPsj4QTwH4oWdci_QXdcfKWyGI
 
 ### Game overview
 Ultimate Tic Tac Toe is a two player game inspired by the the clasic game Tic Tac Toe. The aim is to Win three games in a row. You can only play in the green box that is decided by the last players movement.
