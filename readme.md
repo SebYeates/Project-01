@@ -2,7 +2,7 @@
 
 ## My Game - Ultimate Tic Tac Toe
 
-You can find a hosted version here ----> https://SebYeates.github.io/Project-01/?fbclid=IwAR0hySPoR0HvS5sd_gPEfkxDCmupcLwPslPsj4QTwH4oWdci_QXdcfKWyGI
+You can find a hosted version here ----> http://sebastianyeates.com/Project-01-Ultimate-Tic-Tac-Toe/
 
 ### Timeframe
 7 days
